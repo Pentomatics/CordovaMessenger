@@ -1,0 +1,14 @@
+.chat-thumbnail {
+  height:48px;
+  width:48px;
+  border-radius: 100%;
+}
+
+.message-row {
+    width: 100%;
+}
+
+.last-message-timestamp {
+    float: right;
+}
+

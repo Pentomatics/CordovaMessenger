@@ -1,11 +1,57 @@
-
-
 <ons-page id="chatListPage">
     <ons-toolbar>
         <div class="left"><ons-back-button></ons-back-button></div>
         <div class="center">Chat List Page</div>
     </ons-toolbar>
 
-    <p>Chat List Page.</p>
+    <ons-list>
+        <ons-list-item modifier="longdivider" tappable>
+            <div class="left">
+               <!--<ons-fab class="app-theme-color">CHAT</ons-fab>-->
+                <img class="chat-thumbnail" src="img/black.png" alt="Avatar">
+            </div>
+            <div class="center">
+                <div class="">
+                    <span class="list-item__title"><b>Cute Kitty 3</b></span>
+                </div>
+                <div class="message-row">
+                    <span class="list-item__content">You: Weeeeee, can't wait aaaaaaaaaaaaaaaaaa :D</span>
+                    <span class="last-message-timestamp">10:38</span>
+                </div>
+
+            </div>
+        </ons-list-item>
+
+        <ons-list-item modifier="longdivider" tappable>
+            <div class="left">
+                <!--<ons-fab class="app-theme-color">CHAT</ons-fab>-->
+                <img class="chat-thumbnail" src="img/black.png" alt="Avatar">
+            </div>
+            <div class="center">
+                <div class="">
+                    <span class="list-item__title"><b>Chat 02</b></span>
+                </div>
+                <div class="message-row">
+                    <span class="list-item__content">Bert: A message :D</span>
+                    <span class="last-message-timestamp">19:00</span>
+                </div>
+
+            </div>
+        </ons-list-item>
+    </ons-list>
+
+
+    <ons-fab class="app-theme-color" position="bottom right">
+        <ons-icon icon="md-plus"></ons-icon>
+    </ons-fab>
 </ons-page>
+
+
+
+
+
+
+
+
+
 
