@@ -1,6 +1,22 @@
 <ons-page id="loginPage">
 
-    <p>Cordova Messenger</p>
 
-    <ons-button id="push-button">Push page</ons-button>
+    <div class="login-page-table-container">
+        <div class="login-page-table-item">
+
+            <div class="login-app-title">Cordova</div>
+            <div class="login-app-title">Messenger</div>
+
+            <div id="login-input-container">
+                <p>
+                    <ons-input id="username" modifier="underbar" placeholder="Username" float></ons-input>
+                </p>
+                <p>
+                    <ons-input  id="password" modifier="underbar" type="password" placeholder="Password" float></ons-input>
+                </p>
+
+                <ons-button id="login-button">Login</ons-button>
+            </div>
+        </div>
+    </div>
 </ons-page>
