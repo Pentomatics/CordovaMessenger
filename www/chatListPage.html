@@ -39,17 +39,23 @@
         </ons-list-item>
     </ons-list>
 
-
-    <ons-fab class="app-theme-color-force-background" position="bottom right">
-        <ons-icon icon="md-plus" style="color:white"></ons-icon>
+    <ons-fab id="button-create-new-chat" onclick="showCreateChatDialog()" position="bottom right">
+        <ons-icon icon="md-plus"></ons-icon>
     </ons-fab>
+
+
+
+    <ons-alert-dialog id="dialog-create-chat" modifier="rowfooter">
+        <div class="alert-dialog-title">Enter a name for the new chat:</div>
+        <div class="alert-dialog-content">
+            <ons-input id="input-chat-name" modifier="underbar" placeholder="Chatname" float></ons-input>
+        </div>
+        <div class="alert-dialog-footer">
+            <ons-alert-dialog-button onclick="hideCreateChatDialog()">Cancel</ons-alert-dialog-button>
+            <ons-alert-dialog-button onclick="createChat()">OK</ons-alert-dialog-button>
+        </div>
+    </ons-alert-dialog>
 </ons-page>
-
-
-
-
-
-
 
 
 

@@ -62,10 +62,47 @@ function generateChatListItemAsHtml(chatChannel) {
     `;
 }
 
-function addOnClickListenerToChatItems(page) {
-    page.querySelectorAll('.chat-list-item').forEach(function(chatItem, index) {
+function addOnClickListenerToChatItems() {
+    document.querySelectorAll('.chat-list-item').forEach(function(chatItem, index) {
         chatItem.onclick = function() {
             document.querySelector('#myNavigator').pushPage('chatChannelPage.html', {data: {title: 'Chat Channel Page'}});
         };
     });
+}
+
+
+
+
+
+function showCreateChatDialog() {
+  var dialog = document.getElementById('dialog-create-chat');
+
+  if (dialog) {
+    dialog.show();
+  }
+}
+
+function hideCreateChatDialog() {
+  document
+    .getElementById('dialog-create-chat')
+    .hide();
+}
+
+
+function createChat() {
+    if (validateCreateChatInput()) {
+        var chatname = document.getElementById('input-chat-name').value;
+        chatChannels.push(new ChatChannel(chatname));
+        hideCreateChatDialog();
+    }
+}
+
+function validateCreateChatInput() {
+    var chatname = document.getElementById('input-chat-name').value;
+    if (chatname === '') {
+        hideCreateChatDialog();
+        return false;
+    }
+
+    return true;
 }
