@@ -4,8 +4,9 @@ var users = [];
 var chatChannels = [];
 
 class User {
-  constructor(name) {
+  constructor(name, password) {
     this.name = name;
+    this.password = password;
   }
 }
 

@@ -9,9 +9,12 @@
      margin-top: 24px;
 }
 
-#login-button {
-    margin-top: 8px;
-    width: 128px;
+#login-button-container {
+     margin-top: 24px;
+}
+
+#sign-in-button, #sign-up-button {
+    margin: 4px;
 }
 
 ons-input {
