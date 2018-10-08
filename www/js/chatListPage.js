@@ -13,19 +13,31 @@ function setTitleOfPage(page) {
 }
 
 function initChatList() {
-    for (i = 0; i < users.length; i++) {
-        if (users[i] !== currentUser) {
-            var lastMessage = new TextMessage("a", "Hallo Weeeelt", new Date());
-            document.querySelector('#chatList').innerHTML += generateChatListItemAsHtml(users[i].name, lastMessage)
-        }
+    for (i = 0; i < chatChannels.length; i++) {
+        document.querySelector('#chatList').innerHTML += generateChatListItemAsHtml(chatChannels[i])
     }
 }
 
-function generateChatListItemAsHtml(chatname, lastMessage = "") {
-    var author = lastMessage.author;
-    var text = lastMessage.text;
-    var hours = lastMessage.timestamp.getHours();
-    var minutes = lastMessage.timestamp.getMinutes()
+function generateChatListItemAsHtml(chatChannel) {
+    var channelName = chatChannel.name;
+
+    if (chatChannel.messages.length === 0) {
+        var messageRowHtml = "";
+
+    } else{
+        var lastMessage = chatChannel.messages[chatChannel.messages.length - 1];
+        var author = lastMessage.author;
+        var text = lastMessage.text;
+        var hours = lastMessage.timestamp.getHours();
+        var minutes = lastMessage.timestamp.getMinutes();
+        var messageRowHtml = `
+                <div class="message-row">
+                    <span class="list-item__content">${author}: ${text}</span>
+                    <span class="last-message-timestamp">${hours}:${minutes}</span>
+                </div>
+            </div>
+        `;
+    }
 
     if (author === currentUser.name) {
         author = "You";
@@ -42,12 +54,9 @@ function generateChatListItemAsHtml(chatname, lastMessage = "") {
             </div>
             <div class="center">
                 <div>
-                    <span class="list-item__title"><b>${chatname}</b></span>
+                    <span class="list-item__title"><b>${channelName}</b></span>
                 </div>
-                <div class="message-row">
-                    <span class="list-item__content">${author}: ${text}</span>
-                    <span class="last-message-timestamp">${hours}:${minutes}</span>
-                </div>
+                ${messageRowHtml}
             </div>
         </ons-list-item>
     `;
