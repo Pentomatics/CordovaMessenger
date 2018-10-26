@@ -35,7 +35,6 @@ function generateChatListItemAsHtml(chatChannel) {
                     <span class="list-item__content">${author}: ${text}</span>
                     <span class="last-message-timestamp">${hours}:${minutes}</span>
                 </div>
-            </div>
         `;
     }
 

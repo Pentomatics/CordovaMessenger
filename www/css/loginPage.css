@@ -1,34 +1,26 @@
-
-/* _________ Login Page __________*/
-
 .login-app-title {
     font-size: 48px;
 }
 
-#login-input-container {
+#login-input-container, #login-button-container {
      margin-top: 24px;
-}
-
-#login-button-container {
-     margin-top: 24px;
-}
-
-#sign-in-button, #sign-up-button {
-    margin: 4px;
 }
 
 ons-input {
      margin-top: 8px;
 }
 
+#sign-in-button, #sign-up-button {
+    margin: 4px;
+}
 
-.login-page-table-container {
+.login-page-table {
     display: table;
     height: 100%;
     width: 100%;
 }
 
-.login-page-table-item {
+.login-page-table-cell {
     display: table-cell;
     vertical-align: middle;
     text-align: center;

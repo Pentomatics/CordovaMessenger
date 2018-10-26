@@ -5,6 +5,8 @@ document.addEventListener('init', function(event) {
     page.querySelector('#sign-in-button').onclick = onSignInButtonPress;
     page.querySelector('#sign-up-button').onclick = onSignUpButtonPress;
   }
+
+   document.getElementById('device-label').innerHTML = "Device type: " + device.model;
 });
 
 function onSignInButtonPress() {
