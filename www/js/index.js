@@ -1,5 +1,6 @@
 
 var currentUser;
+var currentChatChannel;
 var users = [];
 var chatChannels = [];
 

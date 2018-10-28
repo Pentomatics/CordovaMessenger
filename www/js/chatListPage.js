@@ -4,7 +4,6 @@ document.addEventListener('init', function(event) {
   if (page.id === 'chatListPage') {
     setTitleOfPage(page);
     initChatList();
-    addOnClickListenerToChatItems(page);
   }
 });
 
@@ -47,7 +46,7 @@ function generateChatListItemAsHtml(chatChannel) {
     }
 
     return `
-        <ons-list-item class="chat-list-item" modifier="longdivider" tappable>
+        <ons-list-item id="${channelName}" class="chat-list-item" onclick="chatListItemClicked(this.id)" modifier="longdivider" tappable>
             <div class="left">
                 <img class="chat-thumbnail" src="img/black.png" alt="Avatar">
             </div>
@@ -61,16 +60,15 @@ function generateChatListItemAsHtml(chatChannel) {
     `;
 }
 
-function addOnClickListenerToChatItems() {
-    document.querySelectorAll('.chat-list-item').forEach(function(chatItem, index) {
-        chatItem.onclick = function() {
-            document.querySelector('#myNavigator').pushPage('chatChannelPage.html', {data: {title: 'Chat Channel Page'}});
-        };
-    });
+
+function chatListItemClicked(chatChannelId) {
+    for (i = 0; i < chatChannels.length; i++) {
+        if (chatChannels[i].name === chatChannelId) {
+            currentChatChannel = chatChannels[i];
+        }
+    }
+    document.querySelector('#myNavigator').pushPage('chatChannelPage.html');
 }
-
-
-
 
 
 function showCreateChatDialog() {

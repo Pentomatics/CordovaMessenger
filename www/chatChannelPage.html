@@ -1,12 +1,12 @@
 <ons-page id="chatChannelPage">
     <ons-toolbar>
         <div class="left"><ons-back-button></ons-back-button></div>
-        <div class="center">Channel Name</div>
+        <div class="center page-title">Channel Name</div>
     </ons-toolbar>
 
 
 
-    <ons-list>
+    <ons-list id="messageList">
         <ons-list-item class="message-item" modifier="longdivider" tappable>
             <div class="left">
                 <img class="chat-thumbnail" src="img/black.png" alt="Avatar">
@@ -16,7 +16,7 @@
                     <span class="list-item__title"><b>Bert</b></span>
                 </div>
                 <div class="message-row">
-                    <span class="list-item__content">A message :D A message :D A message :D A message :D A message :D A message :D A message :D A message :D A message :D </span>
+                    <span class="list-item__content">A message :D</span>
                     <span class="last-message-timestamp">19:00</span>
                 </div>
             </div>
@@ -30,35 +30,7 @@
                     <span class="list-item__title"><b>Bert</b></span>
                 </div>
                 <div class="message-row">
-                    <span class="list-item__content">A message :D A message :D A message :D A message :D A message :D A message :D A message :D A message :D A message :D </span>
-                    <span class="last-message-timestamp">19:00</span>
-                </div>
-            </div>
-        </ons-list-item>
-        <ons-list-item class="message-item" modifier="longdivider" tappable>
-            <div class="left">
-                <img class="chat-thumbnail" src="img/black.png" alt="Avatar">
-            </div>
-            <div class="center">
-                <div>
-                    <span class="list-item__title"><b>Bert</b></span>
-                </div>
-                <div class="message-row">
-                    <span class="list-item__content">A message :D A message :D A message :D A message :D A message :D A message :D A message :D A message :D A message :D </span>
-                    <span class="last-message-timestamp">19:00</span>
-                </div>
-            </div>
-        </ons-list-item>
-        <ons-list-item class="message-item" modifier="longdivider" tappable>
-            <div class="left">
-                <img class="chat-thumbnail" src="img/black.png" alt="Avatar">
-            </div>
-            <div class="center">
-                <div>
-                    <span class="list-item__title"><b>Bert</b></span>
-                </div>
-                <div class="message-row">
-                    <span class="list-item__content">A message :D A message :D A message :D A message :D A message :D A message :D A message :D A message :D A message :D </span>
+                    <span class="list-item__content">Another message :D</span>
                     <span class="last-message-timestamp">19:00</span>
                 </div>
             </div>
@@ -69,8 +41,8 @@
 
     <ons-bottom-toolbar>
         <div id="input-container">
-            <ons-input id="input-message" placeholder="Username" float></ons-input>
-            <ons-button id="send-message-button">
+            <ons-input id="input-message" placeholder="Enter message" float></ons-input>
+            <ons-button id="send-message-button" onClick="submitMessage()">
                 <ons-icon icon="md-play"></ons-icon>
             </ons-button>
         </div>
